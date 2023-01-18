@@ -4,12 +4,12 @@ This project is for a frined. A blog in which she offers a couple of services, p
 
 ## Dependencies
 
-react
-react-dom
-react-router-dom
-react-icons
-react-spinners
-axios
+react.
+react-dom.
+react-router-dom.
+react-icons.
+react-spinners.
+axios.
 
 
 ### `npm start`
