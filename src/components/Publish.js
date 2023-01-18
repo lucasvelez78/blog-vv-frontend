@@ -1,35 +1,37 @@
 import { useState } from "react";
+import axios from "axios";
 
 function Publicar() {
-  const [publication, setPublication] = useState({
-    title: "",
-    content: "",
-  });
-  const [fileUpload, setFileUpload] = useState({});
+  const [name, setName] = useState("");
+  const [content, setContent] = useState("");
+  const [videos, setVideos] = useState([]);
 
-  function handleChange(event) {
-    const { name, value } = event.target;
-    setPublication((prevPublication) => {
-      return {
-        ...prevPublication,
-        [name]: value,
-      };
-    });
-  }
-
-  function handleFileInput(event) {
-    console.log(event.target.files[0]);
-    setFileUpload(event.target.files[0]);
+  function handleSubmit(event) {
+    event.preventDefault();
+    let formdata = new FormData();
+    for (let index in videos) {
+      formdata.append("videos", videos[index]);
+    }
+    formdata.append("name", name);
+    formdata.append("content", content);
+    axios
+      .post("/media/create", formdata)
+      .then((success) => {
+        alert("video uploaded");
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Error");
+      });
   }
 
   return (
     <div>
-      <form method="POST" action="/administrador" encType="multipart/form-data">
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
           <input
-            onChange={handleChange}
-            value={publication.title}
-            name="title"
+            onChange={(e) => setName(e.target.value)}
+            name="name"
             type="text"
             className="form-control"
             placeholder="título"
@@ -37,8 +39,7 @@ function Publicar() {
         </div>
         <div className="form-group mb-1">
           <textarea
-            onChange={handleChange}
-            value={publication.content}
+            onChange={(e) => setContent(e.target.value)}
             name="content"
             className="form-control"
             placeholder="contenido"
@@ -49,10 +50,12 @@ function Publicar() {
         <div className="form-group">
           <input
             type="file"
-            name="file"
-            value={fileUpload.filename}
-            onChange={handleFileInput}
+            name="videos"
+            id="videos"
+            onChange={(e) => setVideos(e.target.files)}
             className="form-control"
+            accept=".mp4, .mkv"
+            multiple
           />
         </div>
         <button type="submit" className="publicarBtn">

@@ -1,13 +1,35 @@
 import Publications from "../components/Publications";
 import Pagination from "../components/Pagination";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Loader from "../components/Loader";
+import axios from "axios";
 
 function Posts() {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(8);
-  const [load, setLoad] = useState(false);
+  const [postsPerPage] = useState(4);
+  const [load, setLoad] = useState(true);
+
+  // Get Medias from DB
+
+  const getAllMedias = () => {
+    axios
+      .get("media/all")
+      .then((result) => {
+        let reversedArray = result.data.reverse();
+        setPosts(reversedArray);
+        setLoad(false);
+      })
+      .catch((error) => {
+        setPosts([]);
+        console.log(error);
+        alert("Error");
+      });
+  };
+
+  useEffect(() => {
+    getAllMedias();
+  }, []);
 
   //Get current posts
 
@@ -26,30 +48,14 @@ function Posts() {
         <h1>Publicaciones</h1>
       </div>
       <div className="publicacionContent">
-        <div className="publicacionImg">
-          <img src="https://picsum.photos/400/500" alt="publicacion"></img>
-        </div>
-        {posts && (
-          <div className="publicacionText">
-            <h1>title</h1>
-            <p>content</p>
-            <a href="/#">Leer más</a>
-          </div>
-        )}
+        <Publications posts={currentPosts} />
       </div>
-      <div className="sectionPubl">
-        <h4>Otras Publicaciones _______</h4>
-        <div className="otrasPublicaciones">
-          <div className="publicaciones-row">
-            <Publications posts={currentPosts} />
-          </div>
-        </div>
-        <Pagination
-          postsPerPage={postsPerPage}
-          totalPosts={posts.length}
-          paginate={paginate}
-        />
-      </div>
+
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={posts.length}
+        paginate={paginate}
+      />
     </div>
   );
 }

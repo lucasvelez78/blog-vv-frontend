@@ -20,7 +20,7 @@ function Register() {
   function handleClick(event) {
     event.preventDefault();
     axios
-      .post("/registration", { userInfo })
+      .post("/registro", userInfo)
       .then((response) => console.log(response))
       .catch((err) => console.log(err));
   }
