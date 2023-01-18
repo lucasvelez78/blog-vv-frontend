@@ -4,12 +4,17 @@ This project is for a frined. A blog in which she offers a couple of services, p
 
 ## Dependencies
 
-react.
-react-dom.
-react-router-dom.
-react-icons.
-react-spinners.
-axios.
+"@testing-library/jest-dom": "^5.16.5",
+"@testing-library/react": "^13.4.0",
+"@testing-library/user-event": "^13.5.0",
+"axios": "^1.2.3",
+"react": "^18.2.0",
+"react-dom": "^18.2.0",
+"react-icons": "^4.7.1",
+"react-router-dom": "^6.6.2",
+"react-scripts": "5.0.1",
+"react-spinners": "^0.13.7",
+"web-vitals": "^2.1.4"
 
 
 ### `npm start`
