@@ -391,59 +391,10 @@ nav {
 .publicacionContent {
   display: flex;
   width: 100%;
-  height: 60%;
   background-color: #fce2db;
-  margin: 0;
+  padding: 30px 0;
   justify-content: center;
   align-items: center;
-}
-
-.publicacionImg {
-  width: 50%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-top: -30px;
-  margin-bottom: -30px;
-}
-
-.publicacionText {
-  position: relative;
-  right: 6rem;
-  width: 40%;
-  justify-content: left;
-  align-items: center;
-}
-
-.publicacionText a {
-  cursor: pointer;
-}
-
-.publicacionText h1 {
-  color: #7a4495;
-}
-
-.publicacionText p {
-  color: grey;
-}
-
-.sectionPubl {
-  background-color: #fce2db;
-  padding-top: 80px;
-}
-
-.sectionPubl h4 {
-  color: #7a4495;
-  margin: 40px 80px;
-}
-
-.otrasPublicaciones {
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  padding-top: 10px;
-  padding-bottom: 40px;
 }
 
 .publicaciones-row {
@@ -454,35 +405,10 @@ nav {
   flex-wrap: wrap;
 }
 
-.otrasPublicacionesItem {
-  margin: 1rem 3rem;
-}
-
-.otrasPublicacionesItem img {
-  position: relative;
-}
-
-.otrasPublicacionesTitle {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #b270a2;
-  text-align: center;
-  width: 90%;
-  height: 60px;
-  margin: -20px auto 5px;
-  z-index: 1;
-  cursor: pointer;
-}
-
-.otrasPublicacionesTitle p {
-  color: white;
-  margin: 0;
-}
-
-.otrasPublicacionesTitle:hover {
-  background-color: #7a4495;
+.post {
+  font-family: "Lato", sans-serif;
+  color: #b270a2;
+  margin: 0 10px;
 }
 
 #link-page {
@@ -490,10 +416,6 @@ nav {
 }
 
 @media screen and (max-width: 1230px) {
-  .publicacionText {
-    right: 1rem;
-  }
-
   .card {
     margin: 20px auto;
   }
@@ -502,7 +424,7 @@ nav {
 @media screen and (max-width: 850px) {
   .publicacionContent {
     flex-direction: column;
-    height: 100%;
+    background-color: #fce2db;
   }
 
   .publicacionesHeading {
@@ -513,13 +435,7 @@ nav {
     color: #7a4495;
     text-align: left;
     margin-left: 80px;
-  }
-
-  .publicacionImg {
-    margin-top: -20px;
-    margin-bottom: 30px;
-    right: 3rem;
-    width: 70%;
+    padding-top: 80px;
   }
 
   .publicacionText {
@@ -805,11 +721,13 @@ textarea {
 /* ---------------------------------------- Producto ------------------------------------- */
 
 .producto {
+  display: flex;
   flex-direction: row;
   font-family: "Quicksand", sans-serif;
   color: #b270a2;
   text-align: justify;
-  height: 80%;
+  align-items: center;
+  justify-content: center;
 }
 
 .servicios-container-img {
@@ -822,14 +740,12 @@ textarea {
 
 .servicios-container-img img {
   width: 85%;
-  margin-top: -125px;
+  margin-top: 30px;
   margin-bottom: 20px;
-  margin-left: 40px;
 }
 
 .servicios-container-content p {
-  padding: 0 50px 0 20px;
-  margin: -150px auto auto -30px;
+  padding: 30px 50px 0 5px;
 }
 
 .producto h4 {
@@ -855,43 +771,47 @@ textarea {
 @media screen and (max-width: 1280px) {
   .producto img {
     width: 90%;
-    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .producto {
+    position: relative;
+    display: flex;
+    background-color: #fce2db;
+    flex-direction: column;
+    justify-content: start;
   }
 
-  @media screen and (max-width: 850px) {
-    .producto {
-      position: relative;
-      background-color: #fce2db;
-      flex-wrap: wrap;
-      height: 1000px;
-      justify-content: start;
-    }
-
-    .producto img {
-      width: 90%;
-      margin-top: -85px;
-      margin-bottom: 40px;
-    }
-
-    .producto-heading {
-      font-size: 2rem;
-      margin-top: 80px;
-      height: 300px;
-    }
+  .producto img {
+    width: 90%;
+    margin-top: 40px;
+    margin-bottom: 10px;
   }
 
-  @media screen and (max-width: 584px) {
-    .producto img {
-      width: 90%;
-      margin-top: 0;
-      margin-bottom: 40px;
-    }
+  .producto-heading {
+    font-size: 2rem;
+    padding-top: 100px;
+    padding-bottom: 160px;
+  }
 
-    .producto-heading {
-      font-size: 2rem;
-      margin-top: 80px;
-      height: 300px;
-    }
+  .servicios-container-content {
+    padding-top: 30px;
+    width: 90%;
+  }
+
+  .producto button {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 584px) {
+  .producto {
+    position: relative;
+    display: flex;
+    background-color: #fce2db;
+    flex-direction: column;
+    justify-content: start;
   }
 }
 
@@ -899,7 +819,7 @@ textarea {
 
 .form-buy-div {
   background-color: #fce2db;
-  padding: 50px 200px;
+  padding: 5% 10%;
 }
 
 .input-email {
@@ -908,6 +828,13 @@ textarea {
 
 .input-text {
   width: 110%;
+}
+
+@media screen and (max-width: 850px) {
+  .form-buy-div {
+    background-color: #fce2db;
+    padding: 150px 30px;
+  }
 }
 
 /* ---------------------------------------- Purchased ------------------------------------- */

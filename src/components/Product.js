@@ -80,7 +80,7 @@ function Product(props) {
       <div className="publicacionesHeading producto-heading">
         <h1>{props.title}</h1>
       </div>
-      <div className="servicios-container producto">
+      <div className="producto">
         <div className="servicios-container-img">
           <img src={props.img}></img>
         </div>
