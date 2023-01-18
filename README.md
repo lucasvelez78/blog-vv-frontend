@@ -1,12 +1,9 @@
 # Blog-VV-Frontend
 
-This project is for a frined. A blog in which she offers a couple of services, posts content (video), and a newsletter registration (mailchimp).
+npx create-react-app This project is for a frined. A blog in which she offers a couple of services, posts content (video), and a newsletter registration (mailchimp).
 
 ## Dependencies
 
-"@testing-library/jest-dom": "^5.16.5",
-"@testing-library/react": "^13.4.0",
-"@testing-library/user-event": "^13.5.0",
 "axios": "^1.2.3",
 "react": "^18.2.0",
 "react-dom": "^18.2.0",
