@@ -9,6 +9,8 @@ function ContactForm() {
     message: "",
   });
 
+  const [confirmationEmail, setConfirmationEmail] = useState("");
+
   const navigate = useNavigate();
 
   function handleChange(evt) {
@@ -20,11 +22,18 @@ function ContactForm() {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    axios
-      .post("/contact", userInfo)
-      .then((response) => console.log(response))
-      .catch((err) => console.log(err));
-    navigate("/");
+    if (userInfo.email === confirmationEmail) {
+      axios
+        .post("/contact", userInfo)
+        .then((response) => console.log(response))
+        .catch((err) => console.log(err));
+      alert("Tu mensaje ha sido enviado");
+      navigate("/");
+    } else {
+      alert(
+        "El email y la confirmación del email son distintos. Inténtalo denuevo"
+      );
+    }
   }
 
   return (
@@ -51,6 +60,18 @@ function ContactForm() {
               name="email"
               value={userInfo.email}
               onChange={handleChange}
+            ></input>
+          </label>
+        </div>
+        <div className="form-group">
+          <label htmlFor="confirmationEmail">
+            Confirma tu email
+            <input
+              className="form-input"
+              type="text"
+              name="confirmationEmail"
+              value={confirmationEmail}
+              onChange={(e) => setConfirmationEmail(e.target.value)}
             ></input>
           </label>
         </div>

@@ -5,6 +5,7 @@ function Register() {
   const [userInfo, setUserInfo] = useState({
     name: "",
     email: "",
+    confirmEmail: "",
   });
 
   function handleChange(event) {
@@ -19,10 +20,27 @@ function Register() {
 
   function handleClick(event) {
     event.preventDefault();
-    axios
-      .post("/registro", userInfo)
-      .then((response) => console.log(response))
-      .catch((err) => console.log(err));
+    if (userInfo.email === userInfo.confirmEmail) {
+      axios
+        .post("/registro", userInfo)
+        .then((response) => console.log(response))
+        .catch((err) => console.log(err));
+      alert("Tu registro ha sido exitoso!");
+      setUserInfo({
+        name: "",
+        email: "",
+        confirmEmail: "",
+      });
+    } else {
+      alert(
+        "El email y la confirmación del email son distintos. Inténtalo denuevo"
+      );
+      setUserInfo({
+        name: userInfo.name,
+        email: "",
+        confirmEmail: "",
+      });
+    }
   }
 
   return (
@@ -44,6 +62,14 @@ function Register() {
           name="email"
           placeholder="e-mail"
           value={userInfo.email}
+          onChange={handleChange}
+        />
+        <input
+          className="regInput"
+          type="e-mail"
+          name="confirmEmail"
+          placeholder="confirma e-mail"
+          value={userInfo.confirmEmail}
           onChange={handleChange}
         />
         <button className="regBtn" onClick={handleClick}>

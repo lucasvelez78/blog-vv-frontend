@@ -3,11 +3,14 @@ import { useNavigate } from "react-router-dom";
 
 function Product(props) {
   const product = props.title;
+  const price = props.price;
   const [buy, setBuy] = useState(false);
   const [userInfo, setUserInfo] = useState({
     name: "",
     email: "",
+    confirmEmail: "",
     product: product,
+    price: price,
   });
 
   const navigate = useNavigate();
@@ -57,6 +60,29 @@ function Product(props) {
             </label>
           </div>
           <div className="form-group">
+            <label htmlFor="confirmEmail">
+              Confirma tu email
+              <input
+                className="form-input input-email"
+                type="text"
+                name="confirmEmail"
+                value={userInfo.confirmEmail}
+                onChange={handleChange}
+              ></input>
+            </label>
+          </div>
+          <div className="form-group">
+            <label htmlFor="price">
+              Precio
+              <input
+                className="form-input input-email"
+                type="text"
+                name="price"
+                defaultValue={userInfo.price}
+              ></input>
+            </label>
+          </div>
+          <div className="form-group">
             <label htmlFor="message">
               Tu producto
               <input
@@ -82,11 +108,11 @@ function Product(props) {
       </div>
       <div className="producto">
         <div className="servicios-container-img">
-          <img src={props.img}></img>
+          <img src={props.img} alt="zen"></img>
         </div>
         <div className="servicios-container-content">
           <p>{props.content}</p>
-          <h4>Tarifa: {props.price}</h4>
+          <h4>Tarifa: ${props.price}</h4>
           <button onClick={handleClick}>Comprar</button>
         </div>
       </div>
