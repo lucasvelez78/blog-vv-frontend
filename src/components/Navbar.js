@@ -1,4 +1,10 @@
+import { useContext } from "react";
+import { logContext } from "../context/logContext";
+import { Link } from "react-router-dom";
+
 function Navbar() {
+  // Burger menu animation
+
   function navSlide() {
     const nav = document.querySelector(".navLinks");
     const navigationLinks = document.querySelectorAll(".navLinks a");
@@ -14,26 +20,36 @@ function Navbar() {
     });
   }
 
+  const { log, logOut } = useContext(logContext);
+
   return (
     <nav>
       <div className="logo">
-        <a href="/">
+        <Link to="/">
           <h1>Angels</h1>
-        </a>
+        </Link>
       </div>
       <ul className="navLinks">
         <li>
-          <a href="/">Nosotros</a>
+          <Link to="/products">Servicios</Link>
         </li>
         <li>
-          <a href="/products">Servicios</a>
+          <Link to="/posts">Publicaciones</Link>
         </li>
         <li>
-          <a href="/posts">Publicaciones</a>
+          <Link to="/contact">Contáctanos</Link>
         </li>
-        <li>
-          <a href="/contact">Contáctanos</a>
-        </li>
+        {!log ? (
+          <li>
+            <Link to="/login">Iniciar Sesión</Link>
+          </li>
+        ) : (
+          <li>
+            <button className="btn-logout" onClick={logOut}>
+              Cerrar Sesión
+            </button>
+          </li>
+        )}
       </ul>
       <div className="burger" onClick={navSlide}>
         <div></div>

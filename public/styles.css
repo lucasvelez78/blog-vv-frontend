@@ -157,6 +157,13 @@ nav {
   background-color: #7a4495;
 }
 
+.btn-logout {
+  font-family: "Quicksand";
+  background-color: #fce2db;
+  color: #b270a2;
+  border-style: none;
+}
+
 @media screen and (max-width: 1200px) {
   .navLinks {
     width: 50%;
@@ -231,7 +238,7 @@ nav {
   }
 }
 
-/* ------------------------------------ Administrador ------------------------------------ */
+/* ------------------------------------ Viviana ------------------------------------ */
 
 .administrador h1 {
   padding: 4rem;
@@ -456,6 +463,21 @@ nav {
     margin-bottom: 40px;
   }
 }
+/* ------------------------------------ Loader ------------------------------------ */
+
+.loader-container {
+  background-color: #fce2db;
+  width: 100%;
+  height: 100vh;
+}
+
+.loader {
+  align-items: center;
+  justify-content: center;
+  padding-top: 200px;
+  padding-left: 50%;
+}
+
 /* ------------------------------------ Contacto ------------------------------------ */
 
 .contactBody {
@@ -766,6 +788,10 @@ textarea {
 .producto button:hover {
   background-color: #b270a2;
   color: #fce2db;
+}
+
+#button-checkout {
+  margin-left: 20px;
 }
 
 @media screen and (max-width: 1280px) {

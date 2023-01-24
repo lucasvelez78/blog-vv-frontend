@@ -1,34 +1,56 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import { logContext } from "../context/logContext";
+import axios from "axios";
 
 function Product(props) {
   const product = props.title;
   const price = props.price;
+  const { log, user } = useContext(logContext);
   const [buy, setBuy] = useState(false);
-  const [userInfo, setUserInfo] = useState({
-    name: "",
-    email: "",
-    confirmEmail: "",
+  const [userInfo] = useState({
+    name: user.name,
+    email: user.email,
     product: product,
     price: price,
   });
 
-  const navigate = useNavigate();
+  const mercadopago = new MercadoPago(process.env.REACT_APP_MPAGO_KEY, {
+    locale: "es-AR",
+  });
 
-  function handleChange(evt) {
-    const input = evt.target;
-    const copyUserInfo = { ...userInfo };
-    copyUserInfo[input.name] = input.value;
-    setUserInfo(copyUserInfo);
-  }
+  // function handleChange(evt) {
+  //   const input = evt.target;
+  //   const copyUserInfo = { ...userInfo };
+  //   copyUserInfo[input.name] = input.value;
+  //   setUserInfo(copyUserInfo);
+  // }
 
   function handleClick() {
-    setBuy(true);
+    if (log) {
+      setBuy(true);
+    } else {
+      alert("Debes iniciar sesión para continuar con la compra");
+    }
+  }
+
+  function createCheckout(preferenceId) {
+    mercadopago.checkout({
+      preference: {
+        id: preferenceId,
+      },
+      autoOpen: true,
+    });
   }
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    navigate("/purchased");
+    console.log({ userInfo, user });
+    axios
+      .post("/purchase/create", userInfo)
+      .then((response) => createCheckout(response.data.id))
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   if (buy) {
@@ -42,8 +64,8 @@ function Product(props) {
                 className="form-input input-name"
                 type="text"
                 name="name"
-                value={userInfo.name}
-                onChange={handleChange}
+                defaultValue={user.name}
+                // onChange={handleChange}
               ></input>
             </label>
           </div>
@@ -54,12 +76,12 @@ function Product(props) {
                 className="form-input input-email"
                 type="text"
                 name="email"
-                value={userInfo.email}
-                onChange={handleChange}
+                defaultValue={user.email}
+                // onChange={handleChange}
               ></input>
             </label>
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="confirmEmail">
               Confirma tu email
               <input
@@ -70,7 +92,7 @@ function Product(props) {
                 onChange={handleChange}
               ></input>
             </label>
-          </div>
+          </div> */}
           <div className="form-group">
             <label htmlFor="price">
               Precio

@@ -23,7 +23,6 @@ function ProductDetail() {
           price={productsData[index].price}
         />
       </div>
-      {/* <OrderForm /> */}
     </div>
   );
 }

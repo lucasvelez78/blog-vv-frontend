@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Home() {
   return (
     <div className="homeSection">
@@ -16,9 +18,9 @@ function Home() {
             phasellus. Tristique senectus et netus et malesuada fames ac. Sed
             arcu non odio euismod lacinia at quis risus sed.
           </p>
-          <a className="registerBtn" href="/registration">
+          <Link className="registerBtn" to="/registration">
             Regístrate
-          </a>
+          </Link>
         </div>
       </div>
     </div>
