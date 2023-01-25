@@ -18,13 +18,6 @@ function Product(props) {
     locale: "es-AR",
   });
 
-  // function handleChange(evt) {
-  //   const input = evt.target;
-  //   const copyUserInfo = { ...userInfo };
-  //   copyUserInfo[input.name] = input.value;
-  //   setUserInfo(copyUserInfo);
-  // }
-
   function handleClick() {
     if (log) {
       setBuy(true);
@@ -44,7 +37,12 @@ function Product(props) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    console.log({ userInfo, user });
+    const storedUser = {
+      name: userInfo.name,
+      email: userInfo.email,
+      product: userInfo.product,
+    };
+    localStorage.setItem("storedUser", JSON.stringify(storedUser));
     axios
       .post("/purchase/create", userInfo)
       .then((response) => createCheckout(response.data.id))
@@ -65,7 +63,6 @@ function Product(props) {
                 type="text"
                 name="name"
                 defaultValue={user.name}
-                // onChange={handleChange}
               ></input>
             </label>
           </div>
@@ -77,22 +74,9 @@ function Product(props) {
                 type="text"
                 name="email"
                 defaultValue={user.email}
-                // onChange={handleChange}
               ></input>
             </label>
           </div>
-          {/* <div className="form-group">
-            <label htmlFor="confirmEmail">
-              Confirma tu email
-              <input
-                className="form-input input-email"
-                type="text"
-                name="confirmEmail"
-                value={userInfo.confirmEmail}
-                onChange={handleChange}
-              ></input>
-            </label>
-          </div> */}
           <div className="form-group">
             <label htmlFor="price">
               Precio

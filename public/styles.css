@@ -159,8 +159,9 @@ nav {
 
 .btn-logout {
   font-family: "Quicksand";
+  font-weight: 400;
   background-color: #fce2db;
-  color: #b270a2;
+  color: #7a4495;
   border-style: none;
 }
 
@@ -877,4 +878,18 @@ textarea {
 .purchased h1 {
   font-family: "Lato", sans-serif;
   margin: 50px auto;
+}
+
+.purchased h2 {
+  margin-top: 40px;
+}
+
+.purchased h4 {
+  color: #b270a2;
+}
+
+.detail {
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  color: #7a4495;
 }
