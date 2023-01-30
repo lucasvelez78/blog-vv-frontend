@@ -12,7 +12,7 @@ function Purchased() {
     const localData = JSON.parse(localStorage.getItem("storedUser"));
     console.log(localData);
     axios
-      .post("/purchase", localData)
+      .post("/compra", localData)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   }, []);
