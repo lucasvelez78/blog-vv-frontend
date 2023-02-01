@@ -6,7 +6,7 @@ function Pagination({ postsPerPage, totalPosts, paginate }) {
   }
 
   return (
-    <nav>
+    <div className="pagination-container">
       <ul className="pagination">
         {pageNumbers.map((number) => (
           <li key={number} className="page-item">
@@ -21,7 +21,7 @@ function Pagination({ postsPerPage, totalPosts, paginate }) {
           </li>
         ))}
       </ul>
-    </nav>
+    </div>
   );
 }
 

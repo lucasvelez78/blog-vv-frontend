@@ -40,7 +40,7 @@ function ContactForm() {
     <div className="form">
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="name">
+          <label htmlFor="name" className="form-label">
             Tu nombre
             <input
               className="form-input"
@@ -52,7 +52,7 @@ function ContactForm() {
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="email">
+          <label htmlFor="email" className="form-label form-content">
             Tu email
             <input
               className="form-input"
@@ -64,7 +64,10 @@ function ContactForm() {
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="confirmationEmail">
+          <label
+            htmlFor="confirmationEmail"
+            className="form-label form-content"
+          >
             Confirma tu email
             <input
               className="form-input"
@@ -76,7 +79,7 @@ function ContactForm() {
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="message">
+          <label htmlFor="message" className="form-label form-content">
             Tu mensaje
             <textarea
               className="form-input"

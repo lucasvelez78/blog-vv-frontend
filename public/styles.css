@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  background-color: #fce2db;
 }
 
 /* ------------------------------------ landing ------------------------------------ */
@@ -19,7 +20,7 @@
 .homeLanding {
   width: 100%;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 80px auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,6 +100,10 @@ nav {
   align-items: center;
   height: 5rem;
   padding-top: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
 }
 
 .logo {
@@ -296,8 +301,8 @@ nav {
 .regContainer {
   background-color: #fce2db;
   margin: auto;
+  margin-top: 100px;
   text-align: center;
-  height: 800px;
 }
 
 .regContainer h1 {
@@ -306,6 +311,7 @@ nav {
   font-weight: 200;
   color: #7a4495;
   padding-top: 160px;
+  margin-bottom: 30px;
 }
 
 .regContainer p {
@@ -313,18 +319,18 @@ nav {
   font-weight: 200;
   font-size: 1.2rem;
   color: #7a4495;
-  padding-top: 10px;
+  padding-top: 0;
   margin-bottom: 40px;
 }
 
 .regInput {
   border: 1px solid #fce2db;
-  background-color: #fdf0ec;
+  background-color: rgba(252, 252, 252, 0.2);
   width: 250px;
-  border-radius: 3px;
+  border-radius: 8px;
   font-family: "Lato", sans-serif;
   padding: 10px 15px;
-  margin: 0 auto;
+  margin: 1px auto;
   display: block;
   text-align: center;
   font-size: 18px;
@@ -334,9 +340,9 @@ nav {
 
 .regInputName {
   border: 1px solid #fce2db;
-  background-color: #fdf0ec;
+  background-color: rgba(252, 252, 252, 0.2);
   width: 250px;
-  border-radius: 3px;
+  border-radius: 8px;
   font-family: "Lato", sans-serif;
   padding: 10px 15px;
   margin: 0 auto 0 auto;
@@ -354,7 +360,7 @@ nav {
   border: 0;
   padding: 10px 15px;
   color: #fce2db;
-  border-radius: 3px;
+  border-radius: 8px;
   width: 250px;
   font-size: 18px;
   letter-spacing: 2px;
@@ -387,10 +393,12 @@ nav {
   padding-top: 4.5rem;
   padding-bottom: 4rem;
   margin: 0;
+  margin-top: 80px;
 }
 
 .publicacionesHeading h1 {
   color: #fce2db;
+  background-color: transparent;
   font-family: "Bellefair", serif;
   font-size: 3.5rem;
   letter-spacing: 2px;
@@ -418,10 +426,6 @@ nav {
   font-family: "Lato", sans-serif;
   color: #b270a2;
   margin: 0 10px;
-}
-
-#link-page {
-  color: #7a4495;
 }
 
 @media screen and (max-width: 1230px) {
@@ -464,6 +468,25 @@ nav {
     margin-bottom: 40px;
   }
 }
+
+/* ------------------------------------ Pagination ------------------------------------ */
+
+.pagination-container {
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+#link-page {
+  color: #fce2db;
+  margin: auto;
+  background-color: #b270a2;
+}
+
 /* ------------------------------------ Loader ------------------------------------ */
 
 .loader-container {
@@ -490,6 +513,7 @@ nav {
 .contact-container {
   background-color: #fce2db;
   margin: auto;
+  margin-top: 100px;
   padding: 60px 0;
   text-align: center;
 }
@@ -539,9 +563,14 @@ nav {
   min-width: 290px;
 }
 
+.contact-left {
+  margin-left: 40px;
+}
+
 .contact-right {
   justify-content: left;
   text-align: left;
+  margin-left: 20px;
 }
 
 .react-icons {
@@ -561,10 +590,16 @@ nav {
 .form-group label {
   font-size: 1rem;
   color: #7a4495;
+  display: block;
+}
+
+.form-content {
+  margin-top: -25px;
 }
 
 .form-input {
-  width: 112%;
+  display: block;
+  width: 320px;
   font-size: 1rem;
   padding: 0.5rem;
   background-color: rgba(252, 252, 252, 0.2);
@@ -578,7 +613,7 @@ nav {
 textarea {
   min-height: 100px;
   resize: vertical;
-  max-width: 290px;
+  max-width: 320px;
 }
 
 .contact-btn {
@@ -588,8 +623,10 @@ textarea {
   border-radius: 8px;
   margin-left: 16px;
   margin-bottom: 20px;
+  margin-top: -10px;
   background-color: #7a4495;
   color: #fce2db;
+  width: 320px;
 }
 
 .contact-btn:hover {
@@ -623,6 +660,7 @@ textarea {
     width: 80%;
     align-items: center;
     padding-left: 50px;
+    margin-left: 10px;
   }
 
   .contact-right {
@@ -639,6 +677,7 @@ textarea {
 .servicios {
   background-color: #fce2db;
   height: 100%;
+  margin-top: 70px;
 }
 
 .servicios-container {
@@ -658,10 +697,12 @@ textarea {
   width: 17rem;
   min-height: 460px;
   border-radius: 5px;
-  border: none;
-  background-color: #fdf0ec;
+  border-style: solid;
+  border-color: #b270a2;
+  border-width: 1px;
+  background-color: #fce2db;
   margin: auto 20px;
-  margin-top: -65px;
+  margin-top: -40px;
 }
 
 .card-img {
@@ -702,7 +743,9 @@ textarea {
   background-color: #7a4495;
   color: #fce2db;
   margin-top: 5px;
-  margin-bottom: 20px;
+  margin-bottom: -10px;
+  display: block;
+  width: 250px;
 }
 
 .card-button:hover {
@@ -715,6 +758,7 @@ textarea {
   position: absolute;
   bottom: 10px;
   margin-bottom: 10px;
+  background-color: #fce2db;
 }
 
 @media screen and (max-width: 850px) {
@@ -751,24 +795,31 @@ textarea {
   text-align: justify;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
+  margin-top: -50px;
 }
 
 .servicios-container-img {
   width: 45%;
+  background-color: transparent;
 }
 
 .servicios-container-content {
   width: 45%;
+  background-color: transparent;
+  margin-top: 20px;
 }
 
 .servicios-container-img img {
   width: 85%;
   margin-top: 30px;
   margin-bottom: 20px;
+  margin-left: 30px;
 }
 
 .servicios-container-content p {
   padding: 30px 50px 0 5px;
+  background-color: transparent;
 }
 
 .producto h4 {

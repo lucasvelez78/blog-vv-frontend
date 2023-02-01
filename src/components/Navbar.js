@@ -23,40 +23,42 @@ function Navbar() {
   const { log, logOut } = useContext(logContext);
 
   return (
-    <nav>
-      <div className="logo">
-        <Link to="/">
-          <h1>Angels</h1>
-        </Link>
-      </div>
-      <ul className="navLinks">
-        <li>
-          <Link to="/products">Servicios</Link>
-        </li>
-        <li>
-          <Link to="/posts">Publicaciones</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contáctanos</Link>
-        </li>
-        {!log ? (
+    <div className="nav-container">
+      <nav>
+        <div className="logo">
+          <Link to="/">
+            <h1>Angels</h1>
+          </Link>
+        </div>
+        <ul className="navLinks">
           <li>
-            <Link to="/login">Iniciar Sesión</Link>
+            <Link to="/products">Servicios</Link>
           </li>
-        ) : (
           <li>
-            <button className="btn-logout" onClick={logOut}>
-              Cerrar Sesión
-            </button>
+            <Link to="/posts">Publicaciones</Link>
           </li>
-        )}
-      </ul>
-      <div className="burger" onClick={navSlide}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </nav>
+          <li>
+            <Link to="/contact">Contáctanos</Link>
+          </li>
+          {!log ? (
+            <li>
+              <Link to="/login">Iniciar Sesión</Link>
+            </li>
+          ) : (
+            <li>
+              <button className="btn-logout" onClick={logOut}>
+                Cerrar Sesión
+              </button>
+            </li>
+          )}
+        </ul>
+        <div className="burger" onClick={navSlide}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </nav>
+    </div>
   );
 }
 
