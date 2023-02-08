@@ -1,6 +1,7 @@
 import { MdPlace, MdPhone, MdEmail } from "react-icons/md";
 import ContactInfoItem from "../components/ContactInfoItem";
 import ContactForm from "../components/ContactForm";
+import Footer from "../components/Footer";
 
 function Contacto() {
   return (
@@ -29,6 +30,9 @@ function Contacto() {
             <ContactForm />
           </div>
         </div>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

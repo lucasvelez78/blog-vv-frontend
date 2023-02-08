@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { logContext } from "../context/logContext";
+import Footer from "../components/Footer";
 
 function LogIn() {
   const [userInfo, setUserInfo] = useState({
@@ -40,7 +41,7 @@ function LogIn() {
 
   return (
     <div className="registroBody">
-      <div className="regContainer">
+      <div className="regContainer login-container">
         <h1>Iniciar Sesión</h1>
         <input
           className="regInputName"
@@ -67,8 +68,11 @@ function LogIn() {
           onChange={handleChange}
         />
         <button className="regBtn" onClick={handleClick}>
-          Registrar
+          Iniciar
         </button>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

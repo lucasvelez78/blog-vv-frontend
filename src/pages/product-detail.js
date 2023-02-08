@@ -1,10 +1,11 @@
 import Product from "../components/Product";
 import { useParams } from "react-router-dom";
 import productsData from "../productsData";
+import Footer from "../components/Footer";
 
 function ProductDetail() {
   const producto = useParams().product;
-  let index = null;
+  let index;
   if (producto === "Reiki") {
     index = 0;
   } else if (producto === "Tarot") {
@@ -14,7 +15,7 @@ function ProductDetail() {
   }
   return (
     <div className="servicios">
-      <div className="homeSection">
+      <div>
         <Product
           img={productsData[index].img}
           product={productsData[index].id}
@@ -22,6 +23,9 @@ function ProductDetail() {
           content={productsData[index].content}
           price={productsData[index].price}
         />
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

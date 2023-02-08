@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -22,6 +23,9 @@ function Home() {
             Regístrate
           </Link>
         </div>
+      </div>
+      <div className="footer-section">
+        <Footer />
       </div>
     </div>
   );

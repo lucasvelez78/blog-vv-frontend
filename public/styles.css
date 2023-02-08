@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bellefair&family=Kaushan+Script&family=Quicksand:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&family=Kaushan+Script&family=Playfair+Display&family=Raleway:wght@100;300;400&display=swap");
 
 * {
   padding: 0;
@@ -41,6 +41,7 @@
   height: 400px;
   background: #b270a2;
   margin-left: -15px;
+  border-radius: 5px;
 }
 
 .landingImage {
@@ -49,10 +50,11 @@
   display: felx;
   background: url(./images/angels-img1.jpeg) no-repeat center / cover;
   margin-left: -120px;
+  border-radius: 5px;
 }
 
 .right {
-  font-family: "Quicksand";
+  font-family: "Raleway", sans-serif;
   width: 50%;
   margin: 0 0 0 3rem;
   align-items: center;
@@ -77,7 +79,7 @@
 .registerBtn {
   text-decoration: none;
   text-transform: uppercase;
-  background-color: #b270a2;
+  background-color: #7a4495;
   color: #fce2db;
   padding: 12px 20px;
   margin: 1.5rem 0;
@@ -87,8 +89,29 @@
 }
 
 .registerBtn:hover {
-  background-color: #7a4495;
+  background-color: #b270a2;
   color: #fce2db;
+}
+
+@media screen and (max-width: 850px) {
+  .homeLanding {
+    margin-top: 10rem;
+    flex-direction: column;
+  }
+
+  .right {
+    margin: 5rem 0;
+  }
+
+  .landingDeco {
+    margin-top: -100px;
+    margin-left: -40px;
+  }
+
+  .landingImage {
+    margin-bottom: -60px;
+    margin-right: -40px;
+  }
 }
 
 /* ------------------------------------ navbar ------------------------------------ */
@@ -137,7 +160,7 @@ nav {
 }
 
 .navLinks a {
-  font-family: "Quicksand";
+  font-family: "Raleway", sans-serif;
   text-decoration: none;
   color: #b270a2;
 }
@@ -163,7 +186,7 @@ nav {
 }
 
 .btn-logout {
-  font-family: "Quicksand";
+  font-family: "Raleway", sans-serif;
   font-weight: 400;
   background-color: #fce2db;
   color: #7a4495;
@@ -201,31 +224,12 @@ nav {
   }
 
   .navLinks a {
-    color: #7a4495;
+    color: #b270a2;
     opacity: 0;
   }
 
   .burger {
     display: block;
-  }
-
-  .homeLanding {
-    margin-top: 6rem;
-    flex-direction: column;
-  }
-
-  .right {
-    margin: 5rem 0;
-  }
-
-  .landingDeco {
-    margin-top: -100px;
-    margin-left: -40px;
-  }
-
-  .landingImage {
-    margin-bottom: -60px;
-    margin-right: -40px;
   }
 }
 
@@ -242,6 +246,67 @@ nav {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+/* ------------------------------------ Footer ------------------------------------ */
+
+.footer {
+  background-color: #fce2db;
+  color: #b270a2;
+  width: 100%;
+  padding: 20px;
+}
+
+.footer-top-container {
+  display: flex;
+  justify-content: space-between;
+  margin: auto 60px;
+}
+
+.footer-line {
+  width: 95%;
+  height: 0;
+  border-style: solid;
+  border-color: #b270a2;
+  border-width: 1px;
+  margin: 30px auto;
+  opacity: 0.5;
+}
+
+.socials {
+  position: absolute;
+  right: 300px;
+  margin-top: -15px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #b270a2;
+}
+
+.social {
+  margin: 10px auto;
+}
+
+.footer-links {
+  list-style: none;
+  margin-top: -10px;
+  text-align: right;
+}
+
+.footer-links a {
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
+  color: #b270a2;
+}
+
+.footer-links li {
+  list-style: none;
+  margin: 5px auto;
+}
+
+.developer {
+  margin: -10px 60px;
 }
 
 /* ------------------------------------ Viviana ------------------------------------ */
@@ -300,13 +365,16 @@ nav {
 
 .regContainer {
   background-color: #fce2db;
-  margin: auto;
-  margin-top: 100px;
+  margin: 100px auto;
   text-align: center;
 }
 
+.login-container {
+  margin-bottom: 140px;
+}
+
 .regContainer h1 {
-  font-family: "Lato", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 40px;
   font-weight: 200;
   color: #7a4495;
@@ -315,11 +383,12 @@ nav {
 }
 
 .regContainer p {
-  font-family: "Lato", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 200;
   font-size: 1.2rem;
   color: #7a4495;
   padding-top: 0;
+  margin-top: -20px;
   margin-bottom: 40px;
 }
 
@@ -328,7 +397,7 @@ nav {
   background-color: rgba(252, 252, 252, 0.2);
   width: 250px;
   border-radius: 8px;
-  font-family: "Lato", sans-serif;
+  font-family: "Raleway", sans-serif;
   padding: 10px 15px;
   margin: 1px auto;
   display: block;
@@ -343,7 +412,7 @@ nav {
   background-color: rgba(252, 252, 252, 0.2);
   width: 250px;
   border-radius: 8px;
-  font-family: "Lato", sans-serif;
+  font-family: "Raleway", sans-serif;
   padding: 10px 15px;
   margin: 0 auto 0 auto;
   display: block;
@@ -385,52 +454,113 @@ nav {
   background-color: #fce2db;
 }
 
-.publicacionesHeading {
-  text-align: center;
+.posts-landing {
   width: 100%;
-  height: 30%;
-  background-color: #b270a2;
-  padding-top: 4.5rem;
-  padding-bottom: 4rem;
-  margin: 0;
-  margin-top: 80px;
+  background-color: #fce2db;
+  justify-content: center;
 }
 
-.publicacionesHeading h1 {
-  color: #fce2db;
+.posts-heading {
+  text-align: center;
+  width: 100%;
+  height: 20%;
+  background-color: #fce2db;
+  padding-top: 4.5rem;
+  padding-bottom: 2rem;
+  margin: 120px auto 40px;
+}
+
+.posts-heading h1 {
+  color: #b270a2;
   background-color: transparent;
-  font-family: "Bellefair", serif;
+  font-family: "Playfair Display", serif;
   font-size: 3.5rem;
   letter-spacing: 2px;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 .publicacionContent {
   display: flex;
-  width: 100%;
-  background-color: #fce2db;
-  padding: 30px 0;
+  width: 90%;
+  background-color: #7a4495;
+  padding: 30px;
   justify-content: center;
   align-items: center;
+  margin: 30px auto 100px;
+  border-style: none;
+  border-radius: 10px;
 }
 
 .publicaciones-row {
-  text-align: center;
-  align-items: center;
-  justify-content: center;
   display: flex;
   flex-wrap: wrap;
 }
 
+.main-post {
+  background-color: #7a4495;
+  color: #fce2db;
+  font-family: "Raleway", sans-serif;
+}
+
+.all-posts {
+  justify-content: right;
+  max-width: 320px;
+  margin: 80px 20px 20px 80px;
+  padding: 30px 10px;
+  border-radius: 10px;
+}
+
+.main-post-description {
+  margin: 0 auto;
+  position: absolute;
+}
+
+.main-post h1 {
+  background-color: #7a4495;
+  color: #fce2db;
+  padding-bottom: 20px;
+  margin-bottom: 0;
+}
+
+.video {
+  margin-top: 0;
+  background-color: #7a4495;
+  z-index: 0;
+}
+
 .post {
-  font-family: "Lato", sans-serif;
+  display: flex;
+  font-family: "Raleway", sans-serif;
   color: #b270a2;
   margin: 0 10px;
 }
 
-@media screen and (max-width: 1230px) {
-  .card {
+.post-description {
+  margin: 40px 20px 10px;
+}
+
+@media screen and (max-width: 1150px) {
+  .publicacionContent {
+    flex-direction: column;
+  }
+
+  .publicaciones-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: auto;
+  }
+
+  .all-posts {
+    width: 90%;
+    max-width: none;
     margin: 20px auto;
+  }
+
+  .post video {
+    width: 100px;
+    height: 80px;
   }
 }
 
@@ -440,14 +570,15 @@ nav {
     background-color: #fce2db;
   }
 
-  .publicacionesHeading {
+  .posts-heading {
     background-color: #fce2db;
+    align-items: center;
+    text-align: center;
   }
 
-  .publicacionesHeading h1 {
+  .posts-heading h1 {
     color: #7a4495;
-    text-align: left;
-    margin-left: 80px;
+    margin: auto;
     padding-top: 80px;
   }
 
@@ -457,15 +588,41 @@ nav {
     margin-left: 20%;
   }
 
-  .sectionPubl {
-    padding-top: 20px;
-    background-color: #7a4495;
+  .main-post {
+    margin-top: 50px;
   }
 
-  .sectionPubl h4 {
-    color: #fce2db;
-    margin-left: 80px;
-    margin-bottom: 40px;
+  .main-post-description {
+    margin-left: 30px;
+    margin-top: 10px;
+  }
+
+  .video {
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .main-post-description h1 {
+    font-size: 20px;
+  }
+
+  .main-post video {
+    width: 480px;
+    height: 380px;
+  }
+
+  .post {
+    flex-direction: column;
+  }
+
+  .post-description {
+    margin: 20px auto 10px;
+  }
+
+  .post video {
+    width: 80px;
+    height: 60px;
   }
 }
 
@@ -474,6 +631,7 @@ nav {
 .pagination-container {
   align-items: center;
   justify-content: center;
+  margin: 20px auto 0;
 }
 
 .pagination {
@@ -487,7 +645,7 @@ nav {
   background-color: #b270a2;
 }
 
-/* ------------------------------------ Loader ------------------------------------ */
+/* ---------------------------------------- Loader ----------------------------------------- */
 
 .loader-container {
   background-color: #fce2db;
@@ -502,7 +660,7 @@ nav {
   padding-left: 50%;
 }
 
-/* ------------------------------------ Contacto ------------------------------------ */
+/* ----------------------------------------- Contacto ------------------------------------------ */
 
 .contactBody {
   background-color: #fce2db;
@@ -512,15 +670,14 @@ nav {
 
 .contact-container {
   background-color: #fce2db;
-  margin: auto;
-  margin-top: 100px;
+  margin: 90px auto;
   padding: 60px 0;
   text-align: center;
 }
 
 .contact-header {
   letter-spacing: 1px;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Raleway", sans-serif;
   color: #7a4495;
 }
 
@@ -528,7 +685,7 @@ nav {
   display: flex;
   gap: 5rem;
   position: relative;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   justify-content: center;
 }
 
@@ -563,6 +720,14 @@ nav {
   min-width: 290px;
 }
 
+.contact-icon > svg {
+  background-color: rgba(252, 252, 252, 0.2);
+}
+
+.contact-info-text {
+  background-color: rgba(252, 252, 252, 0.2);
+}
+
 .contact-left {
   margin-left: 40px;
 }
@@ -582,7 +747,7 @@ nav {
 }
 
 .form-group {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Raleway", sans-serif;
   width: 100%;
   margin-top: -10px;
 }
@@ -617,7 +782,7 @@ textarea {
 }
 
 .contact-btn {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Raleway", sans-serif;
   border-style: none;
   padding: 0.5rem 1.5rem;
   border-radius: 8px;
@@ -672,116 +837,121 @@ textarea {
   }
 }
 
-/* ------------------------------- Servicios -------------------------------- */
+/* -------------------------------------- Servicios and Card ------------------------------------- */
 
 .servicios {
   background-color: #fce2db;
   height: 100%;
   margin-top: 70px;
+  justify-content: center;
+  align-items: center;
 }
 
 .servicios-container {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   background-color: #fce2db;
   margin: auto;
   margin-top: 0px;
   padding: 0px 20px;
   height: 70%;
   align-items: center;
-  justify-content: center;
 }
 
-/* ---------------------------------------- Card ------------------------------------- */
+.servicios-heading {
+  text-align: center;
+  width: 100%;
+  height: 30%;
+  background-color: #b270a2;
+  padding-top: 4.5rem;
+  padding-bottom: 4rem;
+  margin: 0;
+  margin-top: 60px;
+}
+
+.servicios-heading h1 {
+  color: #fce2db;
+  background-color: transparent;
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
 
 .card {
-  width: 17rem;
-  min-height: 460px;
+  width: 17.5rem;
+  min-height: 420px;
   border-radius: 5px;
   border-style: solid;
   border-color: #b270a2;
   border-width: 1px;
   background-color: #fce2db;
   margin: auto 20px;
-  margin-top: -40px;
+  margin-top: -160px;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .card-img {
   box-sizing: border-box;
+  height: 400px;
 }
 
 .card-img img {
   width: 100%;
-  height: 12rem;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  height: 100%;
+  border-radius: 5px;
 }
 
 .card-description {
-  font-family: "Quicksand", sans-serif;
-  color: #b270a2;
-  padding: 10px;
-  padding-bottom: 20px;
-}
-
-.card-description h2 {
-  color: #7a4495;
-  margin-top: 5px;
-}
-
-.card-description h4 {
-  color: #b270a2;
-  font-weight: 400;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.card-button {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
   text-decoration: none;
-  padding: 5px 18px;
-  border: none;
-  border-radius: 5px;
-  background-color: #7a4495;
-  color: #fce2db;
-  margin-top: 5px;
-  margin-bottom: -10px;
-  display: block;
-  width: 250px;
+  bottom: 40px;
+  left: 50%;
 }
 
-.card-button:hover {
-  background-color: #b270a2;
-  color: #fce2db;
+.card-description h3 {
+  color: #7a4495;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
-.card-bottom {
-  width: 93%;
-  position: absolute;
-  bottom: 10px;
-  margin-bottom: 10px;
-  background-color: #fce2db;
+.card-link {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .servicios-container {
+    height: 135%;
+  }
 }
 
 @media screen and (max-width: 850px) {
-  .servicios-container {
-    position: relative;
+  .servicios-heading {
     background-color: #fce2db;
-    flex-wrap: wrap;
-    height: 1000px;
-    justify-content: start;
+    padding-top: 4.5rem;
+    padding-bottom: 4rem;
+    margin: 0;
+    margin-top: 180px;
+  }
+
+  .servicios-heading h1 {
+    color: #b270a2;
   }
 
   .card {
-    margin: 20px auto;
+    margin: 20px;
   }
 }
 
-@media screen and (max-width: 584px) {
+@media screen and (max-width: 680px) {
   .servicios-container {
-    position: relative;
-    background-color: #fce2db;
-    flex-wrap: wrap;
-    height: 1600px;
-    justify-content: start;
+    height: 1500px;
+  }
+  .card {
+    margin-top: 10px;
   }
 }
 
@@ -789,14 +959,37 @@ textarea {
 
 .producto {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   font-family: "Quicksand", sans-serif;
   color: #b270a2;
-  text-align: justify;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
-  margin-top: -50px;
+  background-color: #b270a2;
+  margin: 180px auto auto;
+  border-style: solid;
+  border-radius: 10px;
+  width: 80%;
+  position: block;
+}
+
+.producto-container {
+  margin-bottom: 60px;
+}
+
+.producto-description {
+  display: flex;
+  background-color: #b270a2;
+}
+
+.producto-heading {
+  background-color: #b270a2;
+  font-family: "Quicksand", sans-serif;
+  color: #fce2db;
+  margin: 30px auto 0 80px;
+}
+
+.producto-heading h1 {
+  background-color: #b270a2;
 }
 
 .servicios-container-img {
@@ -804,27 +997,27 @@ textarea {
   background-color: transparent;
 }
 
-.servicios-container-content {
-  width: 45%;
-  background-color: transparent;
-  margin-top: 20px;
+.servicios-container-description {
+  width: 40%;
+  background-color: #b270a2;
+  margin: 50px 60px auto 100px;
 }
 
 .servicios-container-img img {
-  width: 85%;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  margin-left: 30px;
+  width: 95%;
+  margin: 40px 80px 50px 60px;
+  border-radius: 10px;
 }
 
-.servicios-container-content p {
-  padding: 30px 50px 0 5px;
+.servicios-container-description p {
   background-color: transparent;
+  color: #fce2db;
 }
 
-.producto h4 {
-  margin: 30px auto 10px;
-  color: #7a4495;
+.servicios-container-description h4 {
+  margin: 30px 0 10px;
+  color: #fce2db;
+  background-color: #b270a2;
 }
 
 .producto button {
@@ -832,13 +1025,14 @@ textarea {
   padding: 5px 16px;
   border: none;
   border-radius: 5px;
-  background-color: #7a4495;
-  color: #fce2db;
-  margin-top: 10px;
+  background-color: #fce2db;
+  color: #7a4495;
+  margin: 10px auto 30px;
+  width: 140px;
 }
 
 .producto button:hover {
-  background-color: #b270a2;
+  background-color: #7a4495;
   color: #fce2db;
 }
 
@@ -850,13 +1044,16 @@ textarea {
   .producto img {
     width: 90%;
   }
+
+  .servicios-container-description {
+    margin-top: 35px;
+  }
 }
 
 @media screen and (max-width: 970px) {
   .producto {
     position: relative;
     display: flex;
-    background-color: #fce2db;
     flex-direction: column;
     justify-content: start;
   }
@@ -865,12 +1062,6 @@ textarea {
     width: 90%;
     margin-top: 40px;
     margin-bottom: 10px;
-  }
-
-  .producto-heading {
-    font-size: 2rem;
-    padding-top: 100px;
-    padding-bottom: 160px;
   }
 
   .servicios-container-content {
@@ -883,35 +1074,119 @@ textarea {
   }
 }
 
+@media screen and (max-width: 850px) {
+  .producto {
+    margin-top: 300px;
+  }
+  .producto-description {
+    flex-direction: column;
+  }
+
+  .servicios-container-img {
+    width: 80%;
+  }
+
+  .servicios-container-description {
+    width: 80%;
+    margin: 30px auto;
+  }
+}
+
 @media screen and (max-width: 584px) {
   .producto {
     position: relative;
     display: flex;
-    background-color: #fce2db;
+    background-color: #b270a2;
     flex-direction: column;
     justify-content: start;
   }
 }
 
-/* ---------------------------------------- Form-Buy ------------------------------------- */
+/* ---------------------------------------- BuyForm ------------------------------------- */
+
+.producto-container {
+  align-items: center;
+}
 
 .form-buy-div {
-  background-color: #fce2db;
-  padding: 5% 10%;
+  background-color: #7a4495;
+  padding: 30px 80px;
+  width: 40%;
+  margin: 140px auto;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.form-buy {
+  background-color: #7a4495;
+  align-items: center;
+}
+
+.buy-form-group {
+  background-color: #7a4495;
+  font-family: "Quicksand", sans-serif;
+  width: 100%;
+  margin: 20px auto 10px;
+}
+
+.buy-form-group label {
+  background-color: #7a4495;
+  font-size: 1rem;
+  color: #fce2db;
+  display: block;
+}
+
+.buy-form-input {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(252, 252, 252, 0.2);
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  margin-top: 0.3rem;
+  color: #fce2db;
 }
 
 .input-email {
-  width: 121%;
+  width: 100%;
 }
 
 .input-text {
-  width: 110%;
+  width: 100%;
+}
+
+.buy-form-btn {
+  font-family: "Quicksand", sans-serif;
+  border-style: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  background-color: #b270a2;
+  color: #fce2db;
+  width: 100%;
+}
+
+.buy-form-btn:hover {
+  background-color: #fce2db;
+  color: #7a4495;
+}
+
+@media screen and (max-width: 1200px) {
+  .form-buy-div {
+    background-color: #7a4495;
+    padding: 30px;
+  }
 }
 
 @media screen and (max-width: 850px) {
   .form-buy-div {
-    background-color: #fce2db;
-    padding: 150px 30px;
+    background-color: #7a4495;
+    padding: 30px;
+    width: 60%;
+    margin-top: 260px;
   }
 }
 
@@ -943,4 +1218,26 @@ textarea {
   font-family: "Lato", sans-serif;
   font-weight: bold;
   color: #7a4495;
+}
+
+/* -------------------------------- Sweetalert ---------------------------------------   */
+
+.swal-modal {
+  background-color: #fce2db;
+  width: 500px;
+}
+
+.swal-text {
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  color: #b270a2;
+  text-align: center;
+}
+
+.swal-button {
+  background-color: #7a4495;
+}
+
+.swal-button:hover {
+  background-color: #b270a2;
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import Footer from "../components/Footer";
 
 function Register() {
   const [userInfo, setUserInfo] = useState({
@@ -75,6 +76,9 @@ function Register() {
         <button className="regBtn" onClick={handleClick}>
           Registrar
         </button>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

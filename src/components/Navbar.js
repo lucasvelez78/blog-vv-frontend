@@ -27,19 +27,20 @@ function Navbar() {
       <nav>
         <div className="logo">
           <Link to="/">
-            <h1>Angels</h1>
+            <h1>VVM.</h1>
           </Link>
         </div>
         <ul className="navLinks">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
           <li>
             <Link to="/products">Servicios</Link>
           </li>
           <li>
             <Link to="/posts">Publicaciones</Link>
           </li>
-          <li>
-            <Link to="/contact">Contáctanos</Link>
-          </li>
+
           {!log ? (
             <li>
               <Link to="/login">Iniciar Sesión</Link>

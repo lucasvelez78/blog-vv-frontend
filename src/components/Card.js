@@ -1,24 +1,42 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Card(props) {
+  const [isMouseOver, setIsMouseOver] = useState(false);
+  const onMouseOver = () => {
+    setIsMouseOver(true);
+  };
+  const onMouseLeave = () => {
+    setIsMouseOver(false);
+  };
+
   return (
-    <div className="card">
-      <div className="card-img">
-        <img src={props.img} alt="Zen"></img>
-      </div>
-      <div className="card-description">
-        <h2>{props.title}</h2>
-        <p>{props.description}</p>
-        <div className="card-bottom">
-          <h4>${props.price}</h4>
-          <div className="card-button-container">
-            <Link className="card-button" to={`/${props.title}`}>
-              Ver más
-            </Link>
+    <Link className="card-link" to={`/${props.title}`}>
+      {isMouseOver ? (
+        <div
+          className="card"
+          onMouseOver={onMouseOver}
+          onMouseLeave={onMouseLeave}
+        >
+          <div className="card-img">
+            <img src="images/tarot-card.jpg" alt="Zen"></img>
+          </div>
+          <div className="card-description">
+            <h3>{props.title}</h3>
           </div>
         </div>
-      </div>
-    </div>
+      ) : (
+        <div
+          className="card"
+          onMouseOver={onMouseOver}
+          onMouseLeave={onMouseLeave}
+        >
+          <div className="card-img">
+            <img src="images/tarot-card.jpg" alt="Zen"></img>
+          </div>
+        </div>
+      )}
+    </Link>
   );
 }
 

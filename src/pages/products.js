@@ -1,10 +1,11 @@
 import Card from "../components/Card";
 import productosData from "../productsData";
+import Footer from "../components/Footer";
 
 function Products() {
   return (
     <div className="servicios">
-      <div className="publicacionesHeading">
+      <div className="servicios-heading publicacionesHeading">
         <h1>Servicios</h1>
       </div>
       <div className="servicios-container">
@@ -18,6 +19,9 @@ function Products() {
             price={item.price}
           />
         ))}
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );
