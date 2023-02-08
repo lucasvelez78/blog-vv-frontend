@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import swal from "sweetalert";
 
 function ContactForm() {
   const [userInfo, setUserInfo] = useState({
@@ -27,10 +28,10 @@ function ContactForm() {
         .post("/contact", userInfo)
         .then((response) => console.log(response))
         .catch((err) => console.log(err));
-      alert("Tu mensaje ha sido enviado");
+      swal("Tu mensaje ha sido enviado");
       navigate("/");
     } else {
-      alert(
+      swal(
         "El email y la confirmación del email son distintos. Inténtalo denuevo"
       );
     }

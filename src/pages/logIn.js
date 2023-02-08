@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { logContext } from "../context/logContext";
 import Footer from "../components/Footer";
+import swal from "sweetalert";
 
 function LogIn() {
   const [userInfo, setUserInfo] = useState({
@@ -30,7 +31,7 @@ function LogIn() {
       setInfo(userInfo.name, userInfo.email);
       navigate("/products");
     } else {
-      alert("El email y la confirmación son diferentes, inténtalo de nuevo.");
+      swal("El email y la confirmación son diferentes, inténtalo de nuevo.");
       setUserInfo({
         name: "",
         email: "",
@@ -50,6 +51,7 @@ function LogIn() {
           placeholder="nombre"
           value={userInfo.name}
           onChange={handleChange}
+          required
         />
         <input
           className="regInput"
@@ -58,6 +60,7 @@ function LogIn() {
           placeholder="e-mail"
           value={userInfo.email}
           onChange={handleChange}
+          required
         />
         <input
           className="regInput"
@@ -66,6 +69,7 @@ function LogIn() {
           placeholder="confirma e-mail"
           value={userInfo.confirmEmail}
           onChange={handleChange}
+          required
         />
         <button className="regBtn" onClick={handleClick}>
           Iniciar

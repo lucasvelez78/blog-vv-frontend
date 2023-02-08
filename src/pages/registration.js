@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Footer from "../components/Footer";
+import swal from "sweetalert";
 
 function Register() {
   const [userInfo, setUserInfo] = useState({
@@ -26,14 +27,14 @@ function Register() {
         .post("/registro", userInfo)
         .then((response) => console.log(response))
         .catch((err) => console.log(err));
-      alert("Tu registro ha sido exitoso!");
+      swal("Tu registro ha sido exitoso!");
       setUserInfo({
         name: "",
         email: "",
         confirmEmail: "",
       });
     } else {
-      alert(
+      swal(
         "El email y la confirmación del email son distintos. Inténtalo denuevo"
       );
       setUserInfo({
