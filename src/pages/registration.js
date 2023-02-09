@@ -28,6 +28,7 @@ function Register() {
         .then((response) => console.log(response))
         .catch((err) => console.log(err));
       swal("Tu registro ha sido exitoso!");
+      console.log(userInfo);
       setUserInfo({
         name: "",
         email: "",
