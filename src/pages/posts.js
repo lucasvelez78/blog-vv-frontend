@@ -54,7 +54,6 @@ function Posts() {
           <div>
             <div className="main-post-description">
               <h1>{posts[0].name}</h1>
-              {/* <p>{post.content}</p> */}
             </div>
             <video
               preload="auto"
@@ -63,7 +62,9 @@ function Posts() {
               controls
               className="video"
             >
-              <source src={`http://localhost:3001${posts[0].videos[0]}`} />
+              <source
+                src={`${precess.env.REACT_APP_SERVER_URL}${posts[0].videos[0]}`}
+              />
             </video>
           </div>
         </div>
