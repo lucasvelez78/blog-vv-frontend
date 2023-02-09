@@ -63,7 +63,7 @@ function Posts() {
               className="video"
             >
               <source
-                src={`${precess.env.REACT_APP_SERVER_URL}${posts[0].videos[0]}`}
+                src={`${process.env.REACT_APP_SERVER_URL}${posts[0].videos[0]}`}
               />
             </video>
           </div>
