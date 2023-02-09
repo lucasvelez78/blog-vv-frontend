@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import swal from "sweetalert";
 
 function Publicar() {
   const [name, setName] = useState("");
   const [content, setContent] = useState("");
   const [videos, setVideos] = useState([]);
+
+  const navigate = useNavigate();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -15,13 +19,14 @@ function Publicar() {
     formdata.append("name", name);
     formdata.append("content", content);
     axios
-      .post("/media/create", formdata)
+      .post(`${process.env.REACT_APP_SERVER_URL}/media/create`, formdata)
       .then((success) => {
-        alert("video uploaded");
+        swal("video cargado :)");
+        navigate("/posts");
       })
       .catch((error) => {
         console.log(error);
-        alert("Error");
+        swal("Error");
       });
   }
 

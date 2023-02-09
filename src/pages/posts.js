@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Loader from "../components/Loader";
 import Footer from "../components/Footer";
 import axios from "axios";
+import swal from "sweetalert";
 
 function Posts() {
   const [posts, setPosts] = useState([]);
@@ -15,7 +16,7 @@ function Posts() {
 
   const getAllMedias = () => {
     axios
-      .get("media/all")
+      .get(`${process.env.REACT_APP_SERVER_URL}/media/all`)
       .then((result) => {
         let reversedArray = result.data.reverse();
         setPosts(reversedArray);
@@ -24,7 +25,7 @@ function Posts() {
       .catch((error) => {
         setPosts([]);
         console.log(error);
-        alert("Error");
+        swal("Error");
       });
   };
 

@@ -25,7 +25,7 @@ function ContactForm() {
     evt.preventDefault();
     if (userInfo.email === confirmationEmail) {
       axios
-        .post("/contact", userInfo)
+        .post(`${process.env.REACT_APP_SERVER_URL}/contact`, userInfo)
         .then((response) => console.log(response))
         .catch((err) => console.log(err));
       swal("Tu mensaje ha sido enviado");

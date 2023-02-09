@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Footer from "../components/Footer";
 import swal from "sweetalert";
@@ -9,6 +10,8 @@ function Register() {
     email: "",
     confirmEmail: "",
   });
+
+  const navigate = useNavigate();
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -24,11 +27,11 @@ function Register() {
     event.preventDefault();
     if (userInfo.email === userInfo.confirmEmail) {
       axios
-        .post("/registro", userInfo)
+        .post(`${process.env.REACT_APP_SERVER_URL}/registro`, userInfo)
         .then((response) => console.log(response))
         .catch((err) => console.log(err));
       swal("Tu registro ha sido exitoso!");
-      console.log(userInfo);
+      navigate("/");
       setUserInfo({
         name: "",
         email: "",
