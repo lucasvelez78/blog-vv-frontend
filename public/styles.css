@@ -1238,6 +1238,10 @@ textarea {
   background-color: #7a4495;
 }
 
-.swal-button:hover {
+.swal-button:focus {
+  box-shadow: none;
+}
+
+.swal-button:not([disable]):hover {
   background-color: #b270a2;
 }
