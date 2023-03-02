@@ -1,12 +1,10 @@
 import { useState, useContext } from "react";
 import { logContext } from "../context/logContext";
-// import axios from "axios";
 import swal from "sweetalert";
 
 function BuyForm(props) {
   const product = props.title;
   const price = props.price;
-  // To implement mercadopago, bring log from logContext along with user...
   const { user } = useContext(logContext);
   const [userInfo] = useState({
     name: user.name,
@@ -15,41 +13,11 @@ function BuyForm(props) {
     price: price,
   });
 
-  //eslint-disable-next-line
-  // const mercadopago = new MercadoPago(process.env.REACT_APP_MPAGO_KEY, {
-  //   locale: "es-AR",
-  // });
-
-  // function createCheckout(preferenceId) {
-  //   mercadopago.checkout({
-  //     preference: {
-  //       id: preferenceId,
-  //     },
-  //     autoOpen: true,
-  //   });
-  // }
-
   function handleSubmit(evt) {
     evt.preventDefault();
     swal(
       "For now, this website is just a sample.\n You can't purchase anything here just yet...\n Thanks for visiting!"
     );
-    // if (log) {
-    //   const storedUser = {
-    //     name: userInfo.name,
-    //     email: userInfo.email,
-    //     product: userInfo.product,
-    //   };
-    //   localStorage.setItem("storedUser", JSON.stringify(storedUser));
-    //   axios
-    //     .post("/purchase/create", userInfo)
-    //     .then((response) => createCheckout(response.data.id))
-    //     .catch((error) => {
-    //       console.log(error);
-    //     });
-    // } else {
-    //   swal("Debes iniciar sesión para continuar con la compra");
-    // }
   }
 
   return (
