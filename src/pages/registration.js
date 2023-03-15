@@ -26,10 +26,13 @@ function Register() {
   function handleClick(event) {
     event.preventDefault();
     if (userInfo.email === userInfo.confirmEmail) {
+      console.log(userInfo);
       axios
         .post(`${process.env.REACT_APP_SERVER_URL}/registro`, userInfo)
         .then((response) => console.log(response))
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+        });
       swal("Tu registro ha sido exitoso!");
       navigate("/");
       setUserInfo({
