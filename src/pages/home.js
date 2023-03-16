@@ -10,14 +10,13 @@ function Home() {
           <div className="landingImage"></div>
         </div>
         <div className="right">
-          <h1>Hello CodeSandbox</h1>
-          <h3>Start editing to see some magic happen!</h3>
+          <h1>Bienvenidos</h1>
+          <h3>El Blog de Vivi</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio
-            pellentesque diam volutpat commodo sed egestas egestas fringilla
-            phasellus. Tristique senectus et netus et malesuada fames ac. Sed
-            arcu non odio euismod lacinia at quis risus sed.
+            Aquí encontrarás, además de mis publicaciones, los servicios que
+            ofrezco, todos relacionados con la sanación de la mente y el
+            espíritu. Regístrate y recibe nuestro boletín informativo para que
+            estés informado de nuestros eventos y ofertas especiales.
           </p>
           <Link className="registerBtn" to="/registration">
             Regístrate
